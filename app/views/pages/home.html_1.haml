@@ -1,0 +1,21 @@
+%h1 Добро пожаловать в Lightman School!
+
+- array  = @subjects.to_a
+- in_row = 4; first = 0
+
+.container-fluid
+  - while first + in_row < array.length
+    - elements = array[first, first + in_row]
+    .row
+      - elements.each do |element|
+        .col-md-3
+          - if element.cover.present?
+            .wrapper
+              = link_to image_tag(element.cover.url),  '#' #pages_deciduous_path
+              .description
+                .text-center.description_content= element.title
+          - else
+            = link_to element.title, '#' #pages_deciduous_path
+
+          /= element.title #if element.present?
+    - first += in_row

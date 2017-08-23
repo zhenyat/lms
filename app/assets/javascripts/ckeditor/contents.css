@@ -1,0 +1,20 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 29, 2017, 3:40:54 PM
+    Author     : zhenya
+*/
+
+@font-face {
+  font-family: "AramisItalic";
+  src: font-url('AramisItalic.ttf'), format('truetype');
+  src: url('/assets/AramisItalic');
+}
+
+p {
+margin-top:0px;
+margin-bottom:5px;
+}

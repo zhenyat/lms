@@ -1,0 +1,13 @@
+%h1 Добро пожаловать в Lightman School!
+
+.container-fluid
+  .row
+    - @directions.each do |direction|
+      .col-md-4
+        - if direction.cover.present?
+          .wrapper
+            = link_to image_tag(direction.cover.view),  "#{direction.name}/index"
+            .description
+              .text-center.description_content= direction.title
+        - else
+          = link_to direction.title, "#{direction.name}/index"

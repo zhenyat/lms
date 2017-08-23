@@ -1,0 +1,22 @@
+%h1= t Subject.model_name.human
+%table.table.table-striped
+  %tbody
+    - @subject.attributes.each do |key, value|
+      - if key == 'id' || key.include?('digest') || key == 'created_at' || key == 'updated_at'
+        //skip these attributes
+      -else
+        %tr
+          - if key == 'status'
+            %td= t 'status.status'
+            %td= status_mark @subject.status
+          - elsif key == 'cover'
+            %td= t 'cover'
+            %td= image_tag @subject.cover.thumb.url if @subject.cover?
+          -else
+            %td= t "activerecord.attributes.subject.#{key}"
+            %td= value
+
+.form_actions
+  .row
+    .col-md-2
+      = link_to t('actions.back'), admin_subjects_path, class: 'btn btn-primary btn-block'

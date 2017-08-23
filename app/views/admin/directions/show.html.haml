@@ -1,0 +1,19 @@
+%h1= t Direction.model_name.human
+%table.table.table-striped
+  %tbody
+    - @direction.attributes.each do |key, value|
+      - if key == 'id' || key.include?('digest') || key == 'created_at' || key == 'updated_at'
+        //skip these attributes
+      -else
+        %tr
+          - if key == 'status'
+            %td= t 'status.status'
+            %td= status_mark @direction.status
+          -else
+            %td= t "activerecord.attributes.direction.#{key}"
+            %td= value
+
+.form_actions
+  .row
+    .col-md-2
+      = link_to t('actions.back'), admin_directions_path, class: 'btn btn-primary btn-block'
