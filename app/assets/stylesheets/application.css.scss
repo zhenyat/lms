@@ -6,9 +6,16 @@
 // Ref:  https://github.com/rafaelfranca/simple_form-bootstrap/blob/master/app/assets/stylesheets/application.css.scss
 @import "github";
 
+body { 
+  background: url(wallpapers/02.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 body {
   padding-top: 10px;
-  background-color: #ddd;
+  /*background-color: #ddd;*/
   margin: 20px;
 }
 
@@ -66,7 +73,7 @@ body {
 .description_content {
 	padding:   10px;
 	margin:     0px;
-	font-size: 1.8em;
+	font-size: 1.5em;
 }
 
 /* Extending the Bootrstrap classes to cover all possible Flash types */
