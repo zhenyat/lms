@@ -1,0 +1,22 @@
+%h1= t Tour.model_name.human
+%table.table.table-striped
+  %tbody
+    - @tour.attributes.each do |key, value|
+      - if key == 'id' || key.include?('digest') || key == 'created_at' || key == 'updated_at'
+        //skip these attributes
+      -else
+        %tr
+          - if key == 'status'
+            %td= t 'status.status'
+            %td= status_mark @tour.status
+          - elsif key == 'cover'
+            %td= t 'cover'
+            %td= image_tag @tour.cover.thumb.url if @tour.cover?
+          -else
+            %td= t "activerecord.attributes.tour.#{key}"
+            %td= value
+
+.form_actions
+  .row
+    .col-md-2
+      = link_to t('actions.back'), admin_tours_path, class: 'btn btn-primary btn-block'

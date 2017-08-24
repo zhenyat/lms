@@ -35,7 +35,7 @@
             %li= link_to t(Direction.model_name.human(count: 2)),  admin_directions_path
             %li= link_to t(Subject.model_name.human(count: 2)),    admin_subjects_path
             /%li= link_to t(Club.model_name.human(count: 2)),       admin_clubs_path
-            /%li= link_to t(Tour.model_name.human(count: 2)),       admin_tours_path
+            %li= link_to t(Tour.model_name.human(count: 2)),       admin_tours_path
             %li= link_to t(Newsbite.model_name.human(count: 2)),        admin_newsbites_path
       %ul.nav.navbar-nav.navbar-right
         - if MULTILINGUAL

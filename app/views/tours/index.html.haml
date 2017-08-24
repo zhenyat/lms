@@ -1,1 +1,15 @@
 %h1 Образовательный туризм
+
+.container-fluid
+  - @tours.each do |tour|
+    .row
+      .col-sm-2.text-center
+        - if tour.cover.present?
+          = image_tag tour.cover.preview
+        - else
+          = tour.title
+      .col-sm-10
+        = raw tour.content
+    %br
+    
+

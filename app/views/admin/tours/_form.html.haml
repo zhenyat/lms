@@ -1,0 +1,28 @@
+.row
+  .col-md-6
+    = simple_form_for([:admin, @tour], html: {multipart: true}) do |f|
+      = f.error_notification message: t('messages.error_notification')
+
+      .form-inputs
+        = f.input :title
+        = f.input :start_date
+        = f.input :finish_date
+        = f.input :content, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini' } }
+
+        .input-group-addon
+          = f.input :cover, as: :file
+          - if f.object.cover?
+            .input-group
+              = image_tag f.object.cover.thumb.url
+              .input-group-addon
+                = f.input :remove_cover, as: :boolean
+
+        = f.input :status, default: 1
+        /= render 'admin/shared/status_buttons', f: f
+
+      .form_actions
+        .row
+          .col-md-3
+            = f.submit t('actions.save'), class: 'btn btn-primary btn-block'
+          .col-md-3
+            = link_to t('actions.back'), admin_tours_path, class: 'btn btn-default btn-block'
