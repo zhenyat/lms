@@ -1,12 +1,12 @@
 ################################################################################
 # Model:  Direction
 #
-# Purpose:
+# Purpose: Directions of activity
 #
 # Direction attributes:
 #   name              - name:           string,  not NULL, unique
 #   title             - title:          string,  not NULL
-#   cover             - cover:  string
+#   cover             - cover picture:  string
 #   position          - sorting index:  integer, not NULL
 #   status            - status:         enum { active (0) | archived (1) }
 #

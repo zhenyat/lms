@@ -32,7 +32,7 @@ module Lms
     # ZT updates
     config.time_zone              = "Moscow"   # Default: UTC
     config.i18n.available_locales = %w(en ru)
-    config.i18n.default_locale    = :en
+    config.i18n.default_locale    = :ru
     config.i18n.load_path        += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]  # YAML Multiple structure
   end
 end

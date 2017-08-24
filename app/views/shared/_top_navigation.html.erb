@@ -21,35 +21,36 @@
             <span class="glyphicon glyphicon-home"></span> <%= t :home %>
           <% end %>
         </li>
-        <li class="dropdown">
-          <%= link_to '#', data: {toggle: "dropdown"}, class: "dropdown-toggle" do %>
+        <!--li class="dropdown">
+          <%#= link_to '#', data: {toggle: "dropdown"}, class: "dropdown-toggle" do %>
             <%= t :about_us  %>
             <span class="caret"></span>
-          <% end %>
+          <%# end %>
 
           <ul class="dropdown-menu">
-            <li><%= link_to t(:about_company), '#' %></li> <!-- link to: pages_about_path -->
-            <li><%= link_to t(:contacts),      '#' %></li> <!-- link to: pages_contacts_path -->
+            <li><%#= link_to t(:about_company), '#' %></li> 
+            <li><%#= link_to t(:contacts),      '#' %></li> 
           </ul>
-        </li>
+        </li-->
 
-        <li><%= link_to t(:help), '#' %></li>
+        <!--li><%= link_to t(:help), '#' %></li-->
+        
         <li class="dropdown">
           <%= link_to '#', data: {toggle: "dropdown"}, class: "dropdown-toggle" do %>
-            <%= t :dummy %>
+            <%= t :pages %>
             <span class="caret"></span>
           <% end %>
 
           <ul class="dropdown-menu">
-            <li><%= link_to t(:dummy),  '#' %></li>
-            <li><%= link_to t(:dummy),  '#' %></li>
-            <li><%= link_to t(:dummy),  '#' %></li>
+            <li><%= link_to t(Subject.model_name.human(count: 2)), subjects_index_path %></li>
+            <!--li><%#= link_to t(Club.model_name.human(count: 2)),    clubs_index_path %></li>
+            <li><%#= link_to t(Tour.model_name.human(count: 2)),    tours_index_path %></li-->
           </ul>
         </li>
       </ul>
 
       <!-- add search form -->
-      <div class="col-sm-3 col-md-3">
+      <!--div class="col-sm-3 col-sm-3">
         <form class="navbar-form" role="search">
           <div class="input-group">
             <input class="form-control" placeholder="<%= t(:search) %>" name="q" type="text">
@@ -60,7 +61,7 @@
             </div>
           </div>
         </form>
-      </div>
+      </div-->
 
       <ul class="nav navbar-nav navbar-right">
         <% if MULTILINGUAL %>
@@ -72,7 +73,7 @@
             <%= language_switch_bootstrap('front') %>
         <% end %>
 
-        <li class="dropdown">
+        <!--li class="dropdown">
           <%= link_to '#', data: {toggle: "dropdown"}, class: "dropdown-toggle" do %>
             <%= t :account %>
             <span class="caret"></span>
@@ -92,7 +93,7 @@
               <% end %>
             </li>
           </ul>
-        </li>
+        </li-->
       </ul>
     </div>    <!-- / collapse -->
   </div>      <!-- / container-fluid -->

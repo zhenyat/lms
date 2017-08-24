@@ -1,22 +1,22 @@
-%h1= t Direction.model_name.human
+%h1= t Newsbite.model_name.human
 %table.table.table-striped
   %tbody
-    - @direction.attributes.each do |key, value|
+    - @newsbite.attributes.each do |key, value|
       - if key == 'id' || key.include?('digest') || key == 'created_at' || key == 'updated_at'
         //skip these attributes
       -else
         %tr
           - if key == 'status'
             %td= t 'status.status'
-            %td= status_mark @direction.status
+            %td= status_mark @newsbite.status
           - elsif key == 'cover'
             %td= t 'cover'
-            %td= image_tag @direction.cover.thumb.url if @direction.cover?
+            %td= image_tag @newsbite.cover.thumb.url if @newsbite.cover?
           -else
-            %td= t "activerecord.attributes.direction.#{key}"
+            %td= t "activerecord.attributes.newsbite.#{key}"
             %td= value
 
 .form_actions
   .row
     .col-sm-2
-      = link_to t('actions.back'), admin_directions_path, class: 'btn btn-primary btn-block'
+      = link_to t('actions.back'), admin_newsbites_path, class: 'btn btn-primary btn-block'

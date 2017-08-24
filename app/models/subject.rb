@@ -1,14 +1,14 @@
 ################################################################################
 # Model:  Subject
 #
-# Purpose:
+# Purpose: School subjects
 #
 # Subject attributes:
 #   name              - name:           string,  not NULL, unique
 #   title             - title:          string,  not NULL
-#   content             - content:  text
-#   cover             - cover:  string
-#   position          - sorting index:  integer, not NULL
+#   content           - content:        text
+#   cover             - cover picture:  string
+#   position          - sorting         index:  integer, not NULL
 #   status            - status:         enum { active (0) | archived (1) }
 #
 #  22.08.2017 ZT

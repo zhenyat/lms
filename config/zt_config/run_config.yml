@@ -14,5 +14,5 @@ mail:
 debug:
   status:  true
 
-#multilingual:
-#  status:  false
+multilingual:
+  status:  false

@@ -1,5 +1,5 @@
 .row
-  .col-md-6
+  .col-sm-6
     = simple_form_for([:admin, @subject], html: {multipart: true}) do |f|
       = f.error_notification message: t('messages.error_notification')
 
@@ -24,7 +24,7 @@
 
       .form_actions
         .row
-          .col-md-3
+          .col-sm-3
             = f.submit t('actions.save'), class: 'btn btn-primary btn-block'
-          .col-md-3
+          .col-sm-3
             = link_to t('actions.back'), admin_subjects_path, class: 'btn btn-default btn-block'

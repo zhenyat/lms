@@ -22,6 +22,7 @@ Rails.application.routes.draw do
         resources :users
         resources :subjects
         resources :directions
+        resources :newsbites
         # 1: Add new admin resources before this line
       end
 
@@ -47,6 +48,7 @@ Rails.application.routes.draw do
       resources :users
       resources :subjects
       resources :directions
+      resources :newsbites
       # 2: Add new admin resources before this line
     end
 

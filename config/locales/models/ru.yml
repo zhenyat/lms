@@ -4,9 +4,21 @@ ru:
       user:
         one:                    Пользователь
         other:                  Пользователи
-      product:
-        one:                    Товар
-        other:                  Товары
+      club:
+        one:                    Клуб
+        other:                  Клубы   
+      direction:
+        one:                    Направление
+        other:                  Направления
+      newsbite:
+        one:                    Новость
+        other:                  Новости
+      subject:
+        one:                    Предмет
+        other:                  Предметы
+      tour:
+        one:                    Тур
+        other:                  Туры
 
     attributes:
       user:

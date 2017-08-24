@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   
   def home
     @directions = Direction.active
+    @newsbites  = Newsbite.active.actual
   end
 
   def subjects

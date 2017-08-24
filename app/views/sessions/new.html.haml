@@ -3,7 +3,7 @@
 - if alert.present?
   %p.alert= alert
 .row
-  .col-md-3.col-md-offset-1
+  .col-sm-3.col-sm-offset-1
     = simple_form_for(:session, url: login_path, html: {multipart: true}) do |f|
       = f.error_notification message: t('messages.error_notification')
 

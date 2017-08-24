@@ -43,7 +43,7 @@ class CoverUploader < CarrierWave::Uploader::Base
   end
   
   version :view do
-    process resize_to_fit: [250, 183]
+    process resize_to_fit: [250, 188]
   end
   
   # Add a white list of extensions which are allowed to be uploaded.
