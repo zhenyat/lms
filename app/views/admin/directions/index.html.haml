@@ -14,7 +14,7 @@
       %tr
         %td= direction.name
         %td= direction.title
-        %td= direction.cover
+        %td= image_tag direction.cover.thumb.url if direction.cover?
         %td= direction.position
         %td= status_mark direction.status
         %td= render 'admin/shared/index_buttons', resource: direction

@@ -24,6 +24,9 @@ Rails.application.routes.draw do
         resources :directions
         resources :newsbites
         resources :tours
+        resources :albums do
+          resources :images, :only => [:create, :destroy]
+        end
         # 1: Add new admin resources before this line
       end
 
@@ -51,6 +54,9 @@ Rails.application.routes.draw do
       resources :directions
       resources :newsbites
       resources :tours
+      resources :albums do
+        resources :images, :only => [:create, :destroy]
+      end
       # 2: Add new admin resources before this line
     end
 

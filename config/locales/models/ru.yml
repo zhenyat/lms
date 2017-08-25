@@ -1,6 +1,9 @@
 ru:
   activerecord:
     models:
+      album:
+        one:                    Альбом
+        other:                  Альбомы
       user:
         one:                    Пользователь
         other:                  Пользователи
