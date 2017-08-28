@@ -1,0 +1,52 @@
+<div class="col-md-12 text-center"><h2>Наши фотоальбомы</h2></div>
+<div class="container">
+  <div class="col-md-12" >
+    <div class="carousel slide col-md-11" data-ride="carousel" id="myCarousel">
+      <div class="carousel-inner">
+        <div class="col-md-2"></div>
+        <% images.each_with_index do |value, index| %>
+          <% if index == 0 %>
+            <div class="item active">
+              <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3">
+                <%= link_to image_tag(value.model.cover.view.url, :class => "img-responsive") + "#{value.model.title}", "#" %> <!-- value.model.title, :class => "img-responsive"-->
+              </div>
+            </div>
+          <% else %>
+            <div class="item">
+              <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3">
+                <%= link_to image_tag(value.model.cover.view.url,:class => "img-responsive") + "#{value.model.title}", "#" %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+        <div class="col-md-1"></div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function () {
+    //zt_carusel_multi_4();
+
+  $('#myCarousel').carousel({
+      interval: 4000
+    });
+
+    $('.carousel .item').each(function(){
+      var next = $(this).next();
+      if (!next.length) {
+        next = $(this).siblings(':first');
+      }
+      next.children(':first-child').clone().appendTo($(this));
+
+      if (next.next().length>0) {
+          next.next().children(':first-child').clone().appendTo($(this)).addClass('rightest');
+      }
+      else {
+          $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+      }
+    });
+  });
+</script>

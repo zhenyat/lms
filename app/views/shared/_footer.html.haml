@@ -1,6 +1,8 @@
 %footer
   .container
     %hr
-    %p© 2017 ZT Lab
+    %p
+      = image_tag "/ZT_Lab_6.png", size: "32x32"
+      = "© 2017 ZT Lab"
 
     = render 'shared/debug' if Rails.env.development? && ZT_DEBUG

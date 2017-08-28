@@ -1,0 +1,30 @@
+%h2.col-sm-12.text-center Наши фотоальбомы
+.col-sm-6.col-sm-offset-3
+  #myCarousel.carousel.slide{"data-interval" => "3000", "data-ride" => "carousel", "data-type" => "multi"}
+    .carousel-inner
+      - images.each_with_index do |value, index|
+        - if index == 0
+          .item.active
+            /= image_tag(value.model.images.first.preview.url, title: value.model.title, class: 'center-block')
+            = image_tag(value.model.cover.view.url, title: value.model.title, class: 'col-sm-3 img-responsive')
+            /= value.inspect
+            -#.carousel-caption
+              %h3= value.model.title
+        - else
+          .item
+            = image_tag(value.model.cover.view.url, title: value.model.title, class: 'col-sm-3  img-responsive')
+            /= value.inspect
+            -#.carousel-caption
+              %h3= value.model.title
+
+    %a.left.carousel-control{"data-slide" => "prev",  :href => "#myCarousel"}
+      %i.glyphicon.glyphicon-chevron-left
+    %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
+      %i.glyphicon.glyphicon-chevron-right
+    %br
+    %br
+:javascript
+  $(document).ready(function(){
+    carousel_multi_items();
+    //$("#myCarousel").carousel();
+  });

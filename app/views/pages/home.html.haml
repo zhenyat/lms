@@ -1,5 +1,10 @@
 %h1 Добро пожаловать в Lightman School!
 
+/= render("shared/carousel_images",   images:   @carousel_covers) if @carousel_covers.present?
+= render("shared/carousel", images:   @carousel_covers)  if @carousel_covers.present?
+/= render("shared/carousel_1", images:   @carousel_covers)  if @carousel_covers.present?
+%br
+%h2.col-sm-12.text-center Учебные проекты
 .container-fluid
   .row
     - @directions.each do |direction|
@@ -14,9 +19,8 @@
   %br
   
   .row
-    .col-sm-12.text-center
-      %h2 Наши новости
-      %br
+    %h2.col-sm-12.text-center Наши новости
+    %br
     - @newsbites.each do |newsbite|
       .row
         .col-sm-3.text-center

@@ -9,11 +9,14 @@
 #   images            - images gallery:  json
 #   position          - sorting index:   integer, not NULL
 #   status            - status:          enum { active (0) | archived (1) }
+#   cover             - cover image:     string
 #
 #  24.08.2017 ZT
+#  27.08.2017   Cover added
 ################################################################################
 class Album < ApplicationRecord
   mount_uploaders :images, ImageUploader
+  mount_uploader  :cover,  CoverUploader
   
   before_save     :set_position
 

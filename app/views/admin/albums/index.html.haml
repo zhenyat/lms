@@ -4,8 +4,10 @@
     %tr
       %th= Album.human_attribute_name(:title)
       /%th= Album.human_attribute_name(:content)
-      %th= Album.human_attribute_name(:images)
-      /%th= Album.human_attribute_name(:position)
+      /%th= Album.human_attribute_name(:images)
+      %th= Subject.human_attribute_name(:cover)
+      %th= "Количество фото"
+      %th= Album.human_attribute_name(:position)
       %th= t 'status.status'
       %th= t 'actions.actions'
 
@@ -15,6 +17,8 @@
         %td= album.title
         /%td= album.content
         /%td= album.images
+        %td= image_tag album.cover.thumb.url if album.cover?
+        %td= album.images.count
         %td= album.position
         %td= status_mark album.status
         %td= render 'admin/shared/index_buttons', resource: album

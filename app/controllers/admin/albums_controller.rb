@@ -51,8 +51,8 @@ class Admin::AlbumsController < Admin::BaseController
 
     # Removes upload images directory of a destroyed Gallery
     def remove_images_dir
-      if @gallery.images.present?
-        dir = File.dirname(@gallery.images.first.current_path)
+      if @album.images.present?
+        dir = File.dirname(@album.images.first.current_path)
         FileUtils.remove_dir dir if Dir.empty?(dir)
       end
     end
@@ -64,6 +64,6 @@ class Admin::AlbumsController < Admin::BaseController
 
     # Only allows a trusted parameter 'white list' through
     def album_params
-      params.require(:album).permit(:title, :content, :images, :position, :status, {images: []})
+      params.require(:album).permit(:title, :content, :images, :position, :status, {images: []}, :cover)
     end
 end

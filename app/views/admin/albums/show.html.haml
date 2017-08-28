@@ -9,6 +9,9 @@
           - if key == 'status'
             %td= t 'status.status'
             %td= status_mark @album.status
+          - elsif key == 'cover'
+            %td= t 'cover'
+            %td= image_tag @album.cover.thumb.url if @album.cover?
           -else
             %td= t "activerecord.attributes.album.#{key}"
             %td= value
@@ -29,7 +32,6 @@
           = f.file_field :images, multiple: true
         .col-sm-2
         = f.submit "Add More Images"
-
 
 .form_actions
   .row

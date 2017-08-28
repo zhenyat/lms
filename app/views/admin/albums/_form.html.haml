@@ -5,8 +5,20 @@
 
       .form-inputs
         = f.input :title
-        = f.input :content
-        = f.input :images, as: :file, :input_html => { :multiple => true } 
+
+        .input-group-addon
+          = f.input :cover, as: :file
+          - if f.object.cover?
+            .input-group
+              = image_tag @album.cover.thumb.url
+              .input-group-addon
+                = f.input :remove_cover, as: :boolean
+
+        = f.input :content,  as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini' } }
+
+        .input-group-addon
+          = f.input :images,   as: :file, :input_html => { :multiple => true } 
+
         = f.input :position, as: :hidden
 
         = f.input :status, default: 1
