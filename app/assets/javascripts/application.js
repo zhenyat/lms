@@ -13,6 +13,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require lightbox
 //= require ckeditor/init
 // require rainbow
 // require ruby

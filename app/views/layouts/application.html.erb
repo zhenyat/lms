@@ -3,7 +3,7 @@
   <head>
 <title>ZtAdminApp</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+    <%#= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag 'favicon.ico', :rel => 'apple-touch-icon' %>
     <%= render 'shared/shim' %>
@@ -12,6 +12,7 @@
   <body>
     <%= render 'shared/top_navigation' %>
     <%= yield %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %> <!-- lightbox requirement -->
   </body>
 
   <%= render 'shared/footer' %>

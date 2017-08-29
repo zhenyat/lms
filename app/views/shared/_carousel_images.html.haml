@@ -10,14 +10,12 @@
     - images.each_with_index do |value, index|
       - if index == 0
         .item.active
-          /= image_tag(value.model.cover.view.url, class: 'center-block')
-          = link_to image_tag(value.model.cover.view.url, :class => "center-block"), admin_root_path
+          = link_to image_tag(value.model.cover.view.url, :class => "center-block"), albums_show_path(value.model.id)
           .carousel-caption
             %h3= value.model.title
       - else
         .item
-          /= image_tag(value.model.cover.view.url, class: 'center-block')
-          = link_to image_tag(value.model.cover.view.url, :class => "center-block"), admin_root_path
+          = link_to image_tag(value.model.cover.view.url, :class => "center-block"), albums_show_path(value.model.id)
           .carousel-caption
             %h3= value.model.title
   

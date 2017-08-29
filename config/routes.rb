@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'albums/show'
+
   get 'tours/index'
   get 'tours/show'
   get 'clubs/index'

@@ -1,8 +1,11 @@
 %footer
   .container
     %hr
-    %p
-      = image_tag "/ZT_Lab_6.png", size: "32x32"
-      = "© 2017 ZT Lab"
+      .row
+        .col-sm-offset-2.col-sm-4
+          = "© 2017 Lightman School"
+        .col-sm-4
+          = image_tag "/ZT_Lab_6.png", size: "32x32"
+          = "ZT Lab (design)"
 
     = render 'shared/debug' if Rails.env.development? && ZT_DEBUG
