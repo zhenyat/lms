@@ -12,28 +12,30 @@
 #   NB! DO NOT UPDATE THIS FILE FOR DEBUG - use run_config.rb instead
 #
 #   11.10.2016  ZT  Inherited from BKC 95km
+#   30.08.2017  'access_restricted' key is added
 ################################################################################
 
 defaults: &defaults
 
   debug:
-    status:         false
-    path:           ''
+    status:           false
+    path:             ''
 
   mail:
-    bcc:            zt@mail.ru
-    path:           public/mail/attachments
+    bcc:              zt@mail.ru
+    path:             public/mail/attachments
 
   multilingual:
-    status:         true
+    status:           true
 
-
+  access_restricted:  false
+  
 development:
   <<: *defaults
 
   debug:
-    status:         true
-    path:           log/zt_app.log
+    status:           true
+    path:             log/zt_app.log
 
 test:
   <<: *defaults

@@ -27,6 +27,9 @@ MAIL_BCC = ZT_CONFIG['mail']['bcc']
 ##### Multilingual Mode #####
 MULTILINGUAL = ZT_CONFIG['multilingual']['status']
 
+# Access control
+ACCESS_RESTRICTED = ZT_CONFIG['access_restricted']
+
 #if MULTILINGUAL
 #  Rails.application.config.i18n.available_locales = %w(en ru)
 #  Rails.application.config.i18n.default_locale    = :ru #:en
