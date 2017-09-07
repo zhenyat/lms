@@ -7,17 +7,29 @@
 // Ref:  https://github.com/rafaelfranca/simple_form-bootstrap/blob/master/app/assets/stylesheets/application.css.scss
 @import "github";
 
-body { 
+/*body { 
   background: url(wallpapers/02.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
+}*/
+
 body {
   padding-top: 10px;
-  /*background-color: #ddd;*/
+  /*background-color: rgb(83, 70, 17);*/
+  background-color: rgb(32, 31, 36);
   margin: 20px;
+  color: rgb(235, 233, 174);
+}
+
+h1,h2, h3, h4 {color: rgb(225, 214, 26);}
+.logo-style {color: rgb(235, 233, 173);}
+
+.vcenter {                  // Vertical Alignment
+    display:        inline-block;
+    vertical-align: middle;
+    float:          none;
 }
 
 .p-status {

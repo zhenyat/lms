@@ -1,14 +1,14 @@
-%h1 Учебные предметы
-
+%h1.text-center Учебные предметы
+%br
 .container-fluid
   - @subjects.each do |subject|
     .row
-      .col-sm-2.text-center
+      .col-sm-3.vcenter.text-center
         - if subject.cover.present?
           = image_tag subject.cover.preview
         - else
           = subject.title
-      .col-sm-10
+      .col-sm-8.vcenter.text-justify
         = raw subject.content
     %br
     

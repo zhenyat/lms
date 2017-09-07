@@ -2,10 +2,12 @@
   .container
     %hr
       .row
-        .col-sm-offset-2.col-sm-4
-          = "© 2017 Lightman School"
-        .col-sm-4
+        .col-sm-offset-1.col-sm-5.vcenter
+          = "© Lightman School, 2017"
+        .col-sm-3.vcenter
           = image_tag "/ZT_Lab_6.png", size: "32x32"
-          = "ZT Lab (design)"
+          = "ZT Lab (разработка сайта)"
+        .col-sm-2.vcenter
+          = "Илья Кулешов (логотип)"
 
     = render 'shared/debug' if Rails.env.development? && ZT_DEBUG

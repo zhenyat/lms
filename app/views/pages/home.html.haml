@@ -1,5 +1,6 @@
-%h1 Добро пожаловать в Lightman School!
-
+/%h1 Добро пожаловать в Lightman School!
+%br
+%br
 = render("shared/carousel_images",   images:   @carousel_covers) if @carousel_covers.present?
 /= render("shared/carousel", images:   @carousel_covers)  if @carousel_covers.present?
 %br
@@ -27,7 +28,7 @@
             = image_tag newsbite.cover.preview
           - else
             = newsbite.title
-        .coll-sm-offset-1.col-sm-6
+        .coll-sm-offset-1.col-sm-6.text-justify
           = raw newsbite.content
           %br
           %br
