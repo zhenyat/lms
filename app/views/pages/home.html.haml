@@ -4,14 +4,14 @@
 = render("shared/carousel_images",   images:   @carousel_covers) if @carousel_covers.present?
 /= render("shared/carousel", images:   @carousel_covers)  if @carousel_covers.present?
 %br
-%h2.col-sm-12.text-center Учебные проекты
+/%h2.col-sm-12.text-center Учебные проекты
 .container-fluid
   .row
     - @directions.each do |direction|
       .col-sm-4
         - if direction.cover.present?
           .wrapper
-            = link_to image_tag(direction.cover.view),  "#{direction.name}/index"
+            .my_picture= link_to image_tag(direction.cover.view),  "#{direction.name}/index"
             .description
               .text-center.description_content= direction.title
         - else
@@ -19,16 +19,18 @@
   %br
   
   .row
-    %h2.col-sm-12.text-center Наши новости
+    /%h2.col-sm-12.text-center Наши новости
+    %br
+    %br
     %br
     - @newsbites.each do |newsbite|
-      .row
-        .col-sm-3.text-center
+      .row.my_row
+        .col-sm-3.vcenter.text-center
           - if newsbite.cover.present?
             = image_tag newsbite.cover.preview
           - else
             = newsbite.title
-        .coll-sm-offset-1.col-sm-6.text-justify
+        .col-sm-8.vcenter.text-justify
           = raw newsbite.content
           %br
           %br
